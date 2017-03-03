@@ -7,7 +7,6 @@ RUN     apt-get update && apt-get install -y yarn
 
 RUN     mkdir -p /app
 RUN     mkdir -p /data/app
-VOLUME  /app
 VOLUME  /data/app
 
 RUN     git clone https://github.com/ivkos/botyo.git /app
@@ -16,4 +15,4 @@ WORKDIR /app
 RUN     yarn install
 RUN     yarn run build
 
-CMD     ["node", "build/index.js"]
+CMD     cp $CONFIG_PATH config.yaml && node build/index.js
