@@ -9,7 +9,7 @@ RUN     mkdir -p /app
 RUN     mkdir -p /data/app
 VOLUME  /data/app
 
-RUN     git clone https://github.com/ivkos/botyo.git /app
+RUN     git clone https://github.com/fmwr/botyo.git /app
 
 WORKDIR /app
 RUN     yarn install
